@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       const username = this.loginForm.value.username;
       const password = this.loginForm.value.password;
-      // Aquí puedes agregar la lógica de autenticación
+      // Aquí iría la lógica de autenticación
     }
   }
 }
