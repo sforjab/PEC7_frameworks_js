@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // Por defecto, 'currentComponent' es el listado de artículos
-  currentComponent = 'articleList';
+  
 }

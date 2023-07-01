@@ -18,6 +18,7 @@ import { UserService } from './services/user.service';
 import { UserStoreService } from './services/user-store.service';
 import { ArticleAppInterceptor } from './interceptors/article-app.interceptor';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AppRoutingModule } from './app-routing.module';
       provide: HTTP_INTERCEPTORS,
       useClass: ArticleAppInterceptor,
       multi: true
-    }],
+    },
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

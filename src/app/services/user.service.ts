@@ -10,7 +10,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  login(username: string, password?: string): Observable<any> {
+  login(username: string, password: string): Observable<any> {
     const url = `${this.apiUrl}/login`;
     const body = { username, password };
     return this.http.post(url, body);
