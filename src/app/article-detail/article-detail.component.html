@@ -2,7 +2,6 @@
     <h2>{{ article.name }}</h2>
     <img [src]="article.imageUrl" [alt]="article.name" />
     <p>Precio: {{ article.price | number: '1.2-2' | currency: 'EUR' }}</p>
-    <p>Descripción: {{ article.description }}</p>
 </div>
 
 <div *ngIf="!article">
