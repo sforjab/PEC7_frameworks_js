@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ArticleItemComponent } from './article-item/article-item.component';
@@ -14,6 +14,9 @@ import { DefaultImagePipe } from './pipes/default-image.pipe';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { UserService } from './services/user.service';
+import { UserStoreService } from './services/user-store.service';
+import { ArticleAppInterceptor } from './interceptors/article-app.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,14 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ArticleService],
+  providers: [ArticleService,
+    UserService,
+    UserStoreService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ArticleAppInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
