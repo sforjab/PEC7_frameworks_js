@@ -17,6 +17,7 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 import { UserService } from './services/user.service';
 import { UserStoreService } from './services/user-store.service';
 import { ArticleAppInterceptor } from './interceptors/article-app.interceptor';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ArticleAppInterceptor } from './interceptors/article-app.interceptor';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [ArticleService,
     UserService,

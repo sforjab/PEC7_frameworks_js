@@ -1,13 +1,10 @@
 <!-- Creamos el menú principal con sus respectivos enlaces -->
 <nav class="navbar navbar-default">
     <ul class="nav navbar-nav">
-        <!-- Tanto 'Inicio' como 'Artículos' enlazan al listado de artículos -->
-        <li><a (click)="showArticleList()">Inicio</a></li>
-        <li><a (click)="showArticleList()">Artículos</a></li>
-        <!-- 'Nuevo artículo template' nos lleva al formulario de creación de artículos con enfoque dirigido por templates -->
-        <li><a (click)="showArticleNewTemplate()">Nuevo artículo template</a></li>
-        <!-- 'Nuevo artículo reactivo' nos lleva al formulario de creación de artículos con enfoque reactivo -->
-        <li><a (click)="showArticleNewReactive()">Nuevo artículo reactivo</a></li>
+        <li><a (click)="navigateToLogin()">Login</a></li>
+        <li><a (click)="navigateToRegister()">Register</a></li>
+        <li><a (click)="navigateToArticleList()">Article List</a></li>
+        <li><a (click)="navigateToCreateArticle()">Create Article</a></li>
     </ul>
 </nav>
   

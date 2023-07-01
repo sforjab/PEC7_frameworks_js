@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Location } from '@angular/common';
-import { AppComponent } from 'app/app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,26 +7,21 @@ import { AppComponent } from 'app/app.component';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private appComponent: AppComponent, private location: Location) {}
+  constructor(private router: Router) {}
 
-  showArticleList() {
-    // Establecemos el componente actual en 'articleList' en 'AppComponent'
-    this.appComponent.currentComponent = 'articleList';
-    // Navega a la ruta '/articleList' utilizando el servicio 'Location'
-    this.location.go('/articleList');
+  navigateToLogin() {
+    this.router.navigate(['/login']);
   }
 
-  showArticleNewTemplate() {
-    // Establece el componente actual en 'newArticleTemplate' en 'AppComponent'
-    this.appComponent.currentComponent = 'newArticleTemplate';
-    // Navega a la ruta '/newArticleTemplate' utilizando el servicio 'Location'
-    this.location.go('/newArticleTemplate');
+  navigateToRegister() {
+    this.router.navigate(['/register']);
   }
 
-  showArticleNewReactive() {
-    // Establece el componente actual en 'newArticleReactive' en 'AppComponent'
-    this.appComponent.currentComponent = 'newArticleReactive';
-    // Navega a la ruta '/newArticleReactive' utilizando el servicio 'Location'
-    this.location.go('/newArticleReactive');
+  navigateToArticleList() {
+    this.router.navigate(['/article/list']);
+  }
+
+  navigateToCreateArticle() {
+    this.router.navigate(['/article/create']);
   }
 }
