@@ -1,0 +1,11 @@
+<!-- Creamos el menú principal con sus respectivos enlaces -->
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <!-- Ocultamos la opción de login del menú si hay un usuario autenticado -->
+        <li *ngIf="!isAuthenticated()"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li><a routerLink="/register">Register</a></li>
+        <li><a routerLink="/article/list">Article List</a></li>
+        <li><a routerLink="/article/create">Create Article</a></li>
+    </ul>
+</nav>
+  

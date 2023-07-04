@@ -1,0 +1,15 @@
+.article {
+    padding: 0 6rem;
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.article img {
+    margin: 3rem 0;
+    border: 1px solid #000;
+}
+
+.article p {
+    font-weight: bold;
+    font-size: 2rem;
+}

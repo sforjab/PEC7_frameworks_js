@@ -1,24 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ArticleListComponent } from './article-list/article-list.component';
-import { ArticleNewReactiveComponent } from './article-new-reactive/article-new-reactive.component';
-import { ArticleDetailComponent } from './article-detail/article-detail.component';
-import { AuthGuard } from './guards/auth.guard';
-
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'article/list', component: ArticleListComponent },
-  { path: 'article/create', component: ArticleNewReactiveComponent, canActivate: [AuthGuard] },
-  { path: 'article/:id', component: ArticleDetailComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Ruta de redirección inicial al componente de inicio de sesión
+  { path: 'article', loadChildren: () => import('./article/article.module').then(m => m.ArticleModule) }, // Ruta para cargar el módulo de artículos (lazy loading)
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule)  } // Ruta para cargar el módulo de usuarios (lazy loading)
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)], // Importa las rutas principales y las configura para la aplicación
+  exports: [RouterModule] // Exporta el módulo de enrutamiento configurado
 })
 export class AppRoutingModule { }

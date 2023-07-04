@@ -1,0 +1,19 @@
+<h2>Registro de usuario</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+    <!-- Campo de entrada para el nombre de usuario -->
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" formControlName="username" class="form-control">
+    </div>
+    <!-- Campo de entrada para la contraseña -->
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control">
+    </div>
+    <!-- Botón de envío del formulario -->
+    <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Register</button>
+</form>
+
+<!-- Mostramos mensaje de éxito o error -->
+<div *ngIf="showMessage" class="alert alert-info message">{{ successMessage || errorMessage }}</div>
+  

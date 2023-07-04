@@ -1,0 +1,8 @@
+<!-- Mostramos los datos del artículo -->
+<div class="article">
+    <h2>{{ article.name }}</h2>
+    <img [src]="article.imageUrl | defaultImage" [alt]="article.name" />
+    <p>Precio: {{ article.price | number: '1.2-2' | currency: 'EUR' }}</p>
+</div>
+  
+  

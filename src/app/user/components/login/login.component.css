@@ -1,0 +1,15 @@
+form, h2 {
+    padding: 0 4rem;
+}
+
+h2 {
+    margin-bottom: 4rem;
+}
+
+.control {
+    margin: 2rem 0;
+}
+
+.message {
+    margin: 2rem 4rem;
+}
